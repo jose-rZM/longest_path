@@ -1,8 +1,8 @@
 #include <stdlib.h>
-#include "include/string_utils.h"
-#include "include/parser.h"
-#include "include/map.h"
-#include "include/list.h"
+#include "../include/string_utils.h"
+#include "../include/parser.h"
+#include "../include/map.h"
+#include "../include/list.h"
 
 void free_vector(char **vector) {
     int i;

@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "include/string_utils.h"
+#include "../include/string_utils.h"
 
 int is_delim(char c) {
     return (c == ' ' || (c >= 9 && c <= 13));

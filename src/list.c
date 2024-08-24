@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "include/list.h"
+#include "../include/list.h"
 
 t_list *create_new_node(unsigned int data) {
     t_list  *node;

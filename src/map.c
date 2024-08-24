@@ -1,6 +1,6 @@
 #include <stdlib.h>
-#include "include/map.h"
-#include "include/list.h"
+#include "../include/map.h"
+#include "../include/list.h"
 
 t_map   *create_new_map_node(unsigned int vertex) {
     t_map   *node;

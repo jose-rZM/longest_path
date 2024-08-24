@@ -1,6 +1,6 @@
-#include "include/parser.h"
-#include "include/map.h"
-#include "include/string_utils.h"
+#include "../include/parser.h"
+#include "../include/map.h"
+#include "../include/string_utils.h"
 #include <stdlib.h>
 
 int add_new_edge(t_map **map, unsigned int v1, unsigned int v2) {
