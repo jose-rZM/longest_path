@@ -11,5 +11,6 @@ int             index_of(char *str, char c);
 char            *ft_substr(char *str, int start, int end);
 char            **ft_split(char *str);
 int             ft_char_is_digit(char c);
+int             ft_substr_is_numeric(char *str, int start, int end);
 unsigned int    ft_abs_atoi(char *str);
 #endif

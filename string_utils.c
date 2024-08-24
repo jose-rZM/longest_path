@@ -132,6 +132,15 @@ int ft_char_is_digit(char c) {
     return (c >= '0' && c <= '9');
 }
 
+int ft_substr_is_numeric(char *str, int start, int end) {
+    if (!str || start < 0 || end < 0 || start >= end || end > ft_strlen(str)) {
+        return (0);
+    }
+    while (start < end && str[start] && ft_char_is_digit(str[start]))
+        ++start;
+    return (start == end);
+}
+
 unsigned int ft_abs_atoi(char *str) {
     unsigned int value;
 

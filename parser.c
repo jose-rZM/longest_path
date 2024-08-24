@@ -15,10 +15,22 @@ int add_new_edge(t_map **map, unsigned int v1, unsigned int v2) {
     return (0);
 }
 
+int parse_numeric_substring(char *str, int start, int end) {
+    char *sub;
+    int parsed;
+    if (!ft_substr_is_numeric(str, start, end))  {
+       return (-1);
+    }
+    sub = ft_substr(str, start, end);
+    parsed = ft_abs_atoi(sub);
+    free(sub);
+    return (parsed);
+}
+
 int    parse_graph(t_map **map, char **vector) {
     char    *current;
-    char    *first;
-    char    *second;
+    int     first;
+    int     second;
     int     index;
     int     v_ind;
 
@@ -30,16 +42,12 @@ int    parse_graph(t_map **map, char **vector) {
             free_map(map);
             return (-1);
         }
-        first = ft_substr(current, 0, index);
-        second = ft_substr(current, index + 1, ft_strlen(current));
-        if ((!first || !second) || add_new_edge(map, ft_abs_atoi(first), ft_abs_atoi(second))) {
+        first = parse_numeric_substring(current, 0, index);
+        second = parse_numeric_substring(current, index + 1, ft_strlen(current));
+        if (first == -1 || second == -1 || add_new_edge(map, first, second)) {
             free_map(map);
-            free(first);
-            free(second);
             return (-1);
         }
-        free(first);
-        free(second);
         current = vector[++v_ind];
     }
     return (0);
