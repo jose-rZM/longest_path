@@ -47,12 +47,11 @@ int     remove_node(t_list **list, unsigned int data) {
     }
     if (!prev) {
        *list = current->next;
-       free(current);
     }
     else {
         prev->next = current->next;
-        free(current);
     }
+    free(current);
     return (0);
 }
 
