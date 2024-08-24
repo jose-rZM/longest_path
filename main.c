@@ -65,18 +65,24 @@ int main(int argc, char **argv) {
     t_map *map;
     int max_len;
 
-    if (argc == 2) {
-        str = argv[1];
-        map = NULL;
-        max_len = 0;
-        vector = ft_split(str);
-        if (parse_graph(&map, vector) != -1) {
-            max_len = longest_path(map);
-            printf("Max path len: %d\n", max_len);
-        } else {
-            fprintf(stderr, "There was an error in parsing the graph!\n");
-        }
-        free_map(&map);
-        free_vector(vector);
+    if (argc != 2) {
+        fprintf(stderr, "Usage: %s <graph_representation>\n", argv[0]);
+        return (1);
     }
+    str = argv[1];
+    map = NULL;
+    max_len = 0;
+    vector = ft_split(str);
+    if (!vector || !vector[0]) {
+        fprintf(stderr, "Error when processing input\n");
+        return (1);
+    }
+    if (parse_graph(&map, vector) != -1) {
+        max_len = longest_path(map);
+        printf("Max path len: %d\n", max_len);
+    } else {
+        fprintf(stderr, "There was an error in parsing the graph!\n");
+    }
+    free_map(&map);
+    free_vector(vector);
 }
