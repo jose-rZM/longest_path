@@ -70,9 +70,12 @@ int main(int argc, char **argv) {
         map = NULL;
         max_len = 0;
         vector = ft_split(str);
-        parse_graph(&map, vector);
-        max_len = longest_path(map);
-        printf("Max path len: %d\n", max_len);
+        if (parse_graph(&map, vector) != -1) {
+            max_len = longest_path(map);
+            printf("Max path len: %d\n", max_len);
+        } else {
+            fprintf(stderr, "There was an error in parsing the graph!\n");
+        }
         free_map(&map);
         free_vector(vector);
     }
