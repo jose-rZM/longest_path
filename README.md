@@ -19,4 +19,4 @@ Max len: 4
 ### Considerations
 - The code does not adhere strictly to The Norm (files contain more than 5 functions).
 - Due to exercise restrictions, the program is not the most efficient and may use a lot of memory if the graph is dense.
-- The program has no memory leaks if the input is correct (tested with Valgrind). A correct input follows the rules outlined in this README 
+- The program has no memory leaks even when the input is incorrect.
