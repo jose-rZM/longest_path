@@ -20,3 +20,4 @@ Max len: 4
 - The code does not adhere strictly to The Norm (files contain more than 5 functions).
 - Due to exercise restrictions, the program is not the most efficient and may use a lot of memory if the graph is dense.
 - The program has no memory leaks even when the input is incorrect.
+- Note that the problem of finding the longest path in a graph is NP-hard if the graph is undirected, so using a dense graph can lead to an indefinite amount of time to finish.
