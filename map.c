@@ -65,5 +65,5 @@ t_map     *get_map_node(t_map *map, unsigned int vertex) {
         }
         map = map->next;
     }
-    return (map);
+    return (NULL);
 }
