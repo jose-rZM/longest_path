@@ -18,7 +18,7 @@ int   append_new_map_node(t_map **map, unsigned int vertex) {
     t_map   *node;
     t_map   *current;
 
-    if (*map && already_in_map(*map, vertex)) {
+    if (*map && get_map_node(*map, vertex)) {
         return (0);
     }
 
@@ -51,14 +51,14 @@ void    free_map(t_map **map) {
 int     append_new_adj(t_map **map, unsigned int first, unsigned int adj) {
     t_map   *node;
 
-    node = already_in_map(*map, first);
+    node = get_map_node(*map, first);
     if (!node)
         return (-1);
     append_new_node(&node->adjacents, adj);
     return (0);
 }
 
-t_map     *already_in_map(t_map *map, unsigned int vertex) {
+t_map     *get_map_node(t_map *map, unsigned int vertex) {
     while (map) {
         if (map->vertex == vertex) {
             return (map);

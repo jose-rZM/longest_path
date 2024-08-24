@@ -33,7 +33,7 @@ int dfs(t_map *graph, t_map *current, t_list **visited) {
     max_len = 0;
     while (adjs) {
         if (!list_contains_node(*visited, adjs->data)) {
-            max_len = ft_max(max_len, dfs(graph, already_in_map(graph, adjs->data), visited) + 1);
+            max_len = ft_max(max_len, dfs(graph, get_map_node(graph, adjs->data), visited) + 1);
         }
         adjs = adjs->next;
     }

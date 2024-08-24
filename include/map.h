@@ -17,5 +17,5 @@ t_map   *create_new_map_node(unsigned int vertex);
 int     append_new_map_node(t_map **map, unsigned int vertex);
 void    free_map(t_map **map);
 int     append_new_adj(t_map **map, unsigned int first, unsigned int adj);
-t_map   *already_in_map(t_map *map, unsigned int vertex);
+t_map   *get_map_node(t_map *map, unsigned int vertex);
 #endif
