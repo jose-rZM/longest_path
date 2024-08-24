@@ -32,7 +32,7 @@ int    parse_graph(t_map **map, char **vector) {
         }
         first = ft_substr(current, 0, index);
         second = ft_substr(current, index + 1, ft_strlen(current));
-        if (add_new_edge(map, ft_abs_atoi(first), ft_abs_atoi(second))) {
+        if ((!first || !second) || add_new_edge(map, ft_abs_atoi(first), ft_abs_atoi(second))) {
             free_map(map);
             free(first);
             free(second);
